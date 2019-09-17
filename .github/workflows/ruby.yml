@@ -1,0 +1,23 @@
+name: Android CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: android repo
+      run: |
+        mkdir ~/bin
+        PATH=~/bin:$PATH
+        curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+        chmod a+x ~/bin/repo
+   mkdir android
+   cd android
+   git config --global user.name "Jony"
+   git config --global user.email "jonyg1355@gmail.com"
+   repo init -u https://android.googlesource.com/platform/manifest --quiet
+   repo sync --quiet
