@@ -1,5 +1,3 @@
-language: java
-
 before_script:
   - PATH=~/bin:$PATH
   - curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
