@@ -10,8 +10,8 @@ before_script:
   - cd android
   - git config --global user.name "Jony"
   - git config --global user.email "jonyg1355@gmail.com"
-  - repo init -u https://android.googlesource.com/platform/manifest
-  - repo sync --quiet 
+  - repo init -u https://android.googlesource.com/platform/manifest --quiet
+  - repo sync -f --quiet 
  
 upload: 
   stage: build
