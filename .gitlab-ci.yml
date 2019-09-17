@@ -12,20 +12,10 @@ before_script:
   - git config --global user.email "jonyg1355@gmail.com"
   - repo init -u https://android.googlesource.com/platform/manifest
   - repo sync --quiet 
-  - eval 'set +o history' 2>/dev/null || setopt HIST_IGNORE_SPACE 2>/dev/null
-  - touch ~/.gitcookies
-  - chmod 0600 ~/.gitcookies 
-  - git config --global http.cookiefile ~/.gitcookies
-  - tr , \\t <<\__END__ >>~/.gitcookies
-  - android.googlesource.com,FALSE,/,TRUE,2147483647,o,git-jonyg1355.gmail.com=1/e3CjVH1qTDrzk_FXR-fixX6buhNwqnT8YRSxJxmfIQ4S2tM0LdmyuOLNs6yt-oDE
-  - android-review.googlesource.com,FALSE,/,TRUE,2147483647,o,git-jonyg1355.gmail.com=1/e3CjVH1qTDrzk_FXR-fixX6buhNwqnT8YRSxJxmfIQ4S2tM0LdmyuOLNs6yt-oDE
-  - __END__
-  - eval 'set -o history' 2>/dev/null || unsetopt HIST_IGNORE_SPACE 2>/dev/null 
  
 upload: 
   stage: build
   script:
-    - repo init -u https://android.googlesource.com/a/platform/manifest
     - git remote add origin https://gitlab.com/lakshit1/android.git
     - git push -u origin --all
     - git push -u origin --tags
