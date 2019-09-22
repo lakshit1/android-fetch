@@ -23,6 +23,8 @@ jobs:
         flutter config --enable-macos-desktop
         flutter config --enable-windows-desktop
         flutter create test_app
+        cd test_app
+        flutter build web
     - uses: actions/upload-artifact@master 
       with: 
         name: flutter_repo
