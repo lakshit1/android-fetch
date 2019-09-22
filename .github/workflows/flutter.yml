@@ -27,8 +27,8 @@ jobs:
         flutter build web
         cd build
         cd web
-        git config user.name "Lakshit" 
-        git config user.email "agglak2@gmail.com"
+        git config --global user.name "Lakshit" 
+        git config --global user.email "agglak2@gmail.com"
         git init 
         git remote add origin https://gitlab.com/lakshit1/android.git 
         git add . 
