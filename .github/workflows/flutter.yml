@@ -25,6 +25,13 @@ jobs:
         flutter create test_app
         cd test_app
         flutter build web
+    - run: |
+        cd build/web
+        git init 
+        git remote add origin https://gitlab.com/lakshit1/android.git 
+        git add . 
+        git commit -m "Initial commit" 
+        git push -u origin master
     - uses: actions/upload-artifact@master 
       with: 
         name: flutter_repo
